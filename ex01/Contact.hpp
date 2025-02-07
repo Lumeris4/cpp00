@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:25:20 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/07 12:37:09 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/07 13:24:48 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Contact {
 	private:
 		std::string _field_name[5];
-		std::string	_info;
+		std::string	_info[5];
 		
 	public:
 
