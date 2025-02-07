@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:31:19 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/06 13:30:07 by lelanglo         ###   ########.fr       */
+/*   Created: 2025/02/07 12:25:20 by lelanglo          #+#    #+#             */
+/*   Updated: 2025/02/07 12:37:09 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once 
+
+#include <cstdlib>
 #include <iostream>
 #include <string>
 
-int main(int argc, char **argv)
-{
-	if (argc < 2)
-	{
-		std::cout << "* LOUD AND UNBREAKBLE NOISE *" << std::endl;
-		return 0;
-	}
-	for (int j = 1; argv[j]; j++)
-	{
-		for (int i = 0; argv[j][i]; i++)
-			argv[j][i] = toupper(argv[j][i]);
-		std::cout << argv[j] << " ";
-	}
-	std::cout << std::endl;
-	return 0;
-}
+class Contact {
+	private:
+		std::string _field_name[5];
+		std::string	_info;
+		
+	public:
+
+	Contact();
+	~Contact();
+
+	void add_contact();
+	void get_infos_contact(int index);
+};

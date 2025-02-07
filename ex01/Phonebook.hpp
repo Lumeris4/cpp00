@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 12:31:19 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/06 13:30:07 by lelanglo         ###   ########.fr       */
+/*   Created: 2025/02/07 12:38:22 by lelanglo          #+#    #+#             */
+/*   Updated: 2025/02/07 12:46:13 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#pragma once
 
-int main(int argc, char **argv)
+#include "Contact.hpp"
+
+class PhoneBook
 {
-	if (argc < 2)
-	{
-		std::cout << "* LOUD AND UNBREAKBLE NOISE *" << std::endl;
-		return 0;
-	}
-	for (int j = 1; argv[j]; j++)
-	{
-		for (int i = 0; argv[j][i]; i++)
-			argv[j][i] = toupper(argv[j][i]);
-		std::cout << argv[j] << " ";
-	}
-	std::cout << std::endl;
-	return 0;
-}
+	private:
+		Contact _Phonebook[8];
+		int		_index;
+	
+	public:
+	
+	PhoneBook();
+	~PhoneBook();
+
+	void	add_contact_in_phonebook();
+	void	get_infos_of_contact();
+	
+};
