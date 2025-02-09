@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:12:17 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/09 12:29:49 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/09 14:48:45 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ PhoneBook::PhoneBook()
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "Destructor PhoneBook called" << std::endl;
 	return ;
 }
 
@@ -42,12 +41,32 @@ void PhoneBook::add_contact_in_phonebook()
 void PhoneBook::get_infos_of_contact()
 {
 	std::string input;
-	
+
+	std::cout << "     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "----------|----------|----------|----------|" << std::endl;
+	for (int i = 0; i < this->_index; i++)
+		this->_Phonebook->get_infos_contact(i + 1);
 	while(42)
 	{
 		std::cout << "Choose a index between 1 and 8" << std::endl;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << "See you later !" << std::endl;
+			exit(0);
+		}
 		if (input.length() != 1)
-			std::cout << "Are you stupid ?\n I said between 1 and 8" << std::endl;
+			std::cout << "Are you stupid ?\n I said a number between 1 and 8" << std::endl;
+		else if ('1' <= input[0] && input[0] <= '8')
+		{
+			if (this->_index < input[0] - '0')
+				std::cout << "This contact does not exist." << std::endl;
+			else
+				break;
+		}
+		else
+			std::cout << "I said a number between 1 and 8" << std::endl;
 	}
+	this->_Phonebook->get_all_infos();
+	return ;
 }

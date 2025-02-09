@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:25:20 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/07 13:24:48 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/09 14:49:22 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ class Contact {
 
 	void add_contact();
 	void get_infos_contact(int index);
+	void get_all_infos();
 };

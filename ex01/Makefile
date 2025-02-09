@@ -5,7 +5,7 @@ NAME = phone
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-SRCS = Contact.cpp 
+SRCS = Contact.cpp main.cpp Phonebook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

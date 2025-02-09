@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:57:11 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/09 12:04:04 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/09 14:55:04 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ Contact::Contact()
 
 Contact::~Contact()
 {
-	std::cout << "Destructor Contact called" << std::endl;
 	return;
 }
 
@@ -32,9 +31,7 @@ void Contact::get_infos_contact(int index)
 {
 
 	int len;
-	std::cout << "     Index|First Name| Last Name|  Nickname|" << std::endl;
-	std::cout << "----------|----------|----------|----------|" << std::endl;
-	std::cout << "      " << index << "|";
+	std::cout << "         " << index << "|";
 	for (int i = 0;  i < 3; i++)
 	{
 		len = this->_info[i].length();
@@ -51,6 +48,7 @@ void Contact::get_infos_contact(int index)
 			std::cout << ".|";
 		}
 	}
+	std::cout << std::endl;
 	std::cout << "----------|----------|----------|----------|" << std::endl;
 }
 
@@ -60,13 +58,22 @@ void Contact::add_contact()
 
 	for (int i= 0; i < 5; i++)
 	{
-		std::cout << "Enter the" << this->_field_name[i] << ":\n";
+		std::cout << "Enter the " << this->_field_name[i] << ":\n";
 		std::getline(std::cin, result);
 		if (std::cin.eof())
 		{
-			std::cout << "CRTL D pressed !" << std::endl;
+			std::cout << "See you later !" << std::endl;
 			exit(0);
 		}
 		this->_info[i] = result;
 	}
+}
+
+void Contact::get_all_infos()
+{
+	std::cout << "First Name : " << this->_info[0] << std::endl;
+	std::cout << "Last Name : " << this->_info[1] << std::endl;
+	std::cout << "Nickname : " << this->_info[2] << std::endl;
+	std::cout << "Phone number : " << this->_info[3] << std::endl;
+	std::cout << "Darkest Secret : " << this->_info[4] << std::endl;
 }
