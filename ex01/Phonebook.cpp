@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:12:17 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/09 14:48:45 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:14:22 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void PhoneBook::get_infos_of_contact()
 	std::cout << "     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "----------|----------|----------|----------|" << std::endl;
 	for (int i = 0; i < this->_index; i++)
-		this->_Phonebook->get_infos_contact(i + 1);
+		this->_Phonebook[i].get_infos_contact(i + 1);
 	while(42)
 	{
 		std::cout << "Choose a index between 1 and 8" << std::endl;
@@ -67,6 +67,6 @@ void PhoneBook::get_infos_of_contact()
 		else
 			std::cout << "I said a number between 1 and 8" << std::endl;
 	}
-	this->_Phonebook->get_all_infos();
+	this->_Phonebook[input[0] - '0' - 1].get_all_infos();
 	return ;
 }
