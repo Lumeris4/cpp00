@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 12:39:02 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/10 15:32:32 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:47:54 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,20 @@
 Account::Account(int initial_deposit)
 {
 	this->_amount = initial_deposit;
-	this->_nbAccounts = 0;
+	this->_nbAccounts++;
 	this->_nbDeposits = 0;
 	this->_totalNbDeposits = 0;
 	this->_nbWithdrawals = 0;
-	this->_accountIndex = 0;
+	this->_accountIndex = getNbAccounts();
 	this->_nbAccounts = 0;
 	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";amount:" << checkAmount() << ";created"; 
 }
 
 Account::~Account()
 {
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";amount:" << checkAmount() << ";closed"; 
 	return;
 }
 
