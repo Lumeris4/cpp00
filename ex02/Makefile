@@ -5,7 +5,7 @@ NAME = bank
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-SRCS = Account.cpp
+SRCS = Account.cpp tests.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
