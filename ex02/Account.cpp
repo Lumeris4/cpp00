@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 12:39:02 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/11 09:49:56 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:10:50 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ Account::~Account()
 void Account::displayAccountsInfos()
 {
 	_displayTimestamp();
-	std::cout << " account:" << _nbAccounts << ";total:" << _totalAmount << ";deposit:"
-		<< _totalNbDeposits << ";withdrawal:" << _totalNbWithdrawals << std::endl;
+	std::cout << " accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:"
+		<< _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 	return ;
 }
 
@@ -87,7 +87,7 @@ void Account::makeDeposit(int deposit)
 	this->_amount += deposit;
 	this->_totalAmount += deposit;
 	std::cout << ";deposit:" << deposit << ";amount:" << checkAmount()
-		<< ";nb_deposit:" << this->_nbDeposits << std::endl;
+		<< ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 int	Account::checkAmount() const
@@ -98,8 +98,8 @@ int	Account::checkAmount() const
 void Account::displayStatus() const
 {
 	_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex << ";p_amount:" << checkAmount() << ";deposit:"
-		<< this->_nbDeposits << ";withdrawal:" << this->_nbWithdrawals << std::endl;
+	std::cout << " index:" << this->_accountIndex << ";p_amount:" << checkAmount() << ";deposits:"
+		<< this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
@@ -120,7 +120,7 @@ bool Account::makeWithdrawal(int withdrawal)
 		this->_nbWithdrawals++;
 		this->_totalAmount -= withdrawal;
 		this->_totalNbWithdrawals++;
-		std::cout << ";amount:" << checkAmount() << ";nb_withdrawal:" 
+		std::cout << ";amount:" << checkAmount() << ";nb_withdrawals:" 
 			<< this->_nbWithdrawals << std::endl;
 		return true;
 	}
