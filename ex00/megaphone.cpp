@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:31:19 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/06 13:30:07 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:16:54 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	{
 		for (int i = 0; argv[j][i]; i++)
 			argv[j][i] = toupper(argv[j][i]);
-		std::cout << argv[j] << " ";
+		std::cout << argv[j];
 	}
 	std::cout << std::endl;
 	return 0;
