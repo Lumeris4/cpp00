@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:57:11 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/09 14:55:04 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:25:12 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,19 @@ void Contact::add_contact()
 
 	for (int i= 0; i < 5; i++)
 	{
-		std::cout << "Enter the " << this->_field_name[i] << ":\n";
-		std::getline(std::cin, result);
-		if (std::cin.eof())
+		while (1)
 		{
-			std::cout << "See you later !" << std::endl;
-			exit(0);
+			std::cout << "Enter the " << this->_field_name[i] << ":\n";
+			std::getline(std::cin, result);
+			if (std::cin.eof())
+			{
+				std::cout << "See you later !" << std::endl;
+				exit(0);
+			}
+			if (result.length() > 0)
+				break;
+			else
+				std::cout << "Please enter Something !\n";
 		}
 		this->_info[i] = result;
 	}
