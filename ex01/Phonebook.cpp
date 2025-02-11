@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:12:17 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/02/10 10:14:22 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:16:30 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ void PhoneBook::get_infos_of_contact()
 {
 	std::string input;
 
+	if (this->_index == 0)
+	{
+		std::cout << "No one is registered in the phonebook !\n";
+		return;
+	}
 	std::cout << "     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "----------|----------|----------|----------|" << std::endl;
 	for (int i = 0; i < this->_index; i++)
